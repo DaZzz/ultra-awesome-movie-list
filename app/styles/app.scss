@@ -1,0 +1,9 @@
+@import './colors';
+@import './base';
+@import './blocks/index';
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+}

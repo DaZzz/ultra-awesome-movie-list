@@ -1,0 +1,13 @@
+@import '../colors';
+
+.filters-block {
+  display: block;
+  width: 360px;
+}
+
+.filters-block__title {
+  text-transform: uppercase;
+  color: $blue-500;
+  font-size: 16px;
+  margin-bottom: 16px;
+}

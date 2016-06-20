@@ -1,0 +1,73 @@
+<div class="app-container">
+  <div class="header">
+    <div class="header__logo"></div>
+    <h1 class="header__title">Ultra Awesome Movie List</h1>
+    <h2 class="header__subtitle">Delivered for your ultimate browsing experience</h2>
+  </div>
+
+  <div class="main-content">
+
+    {{!-- Movie List --}}
+    <div class="movies-list">
+      {{#each model.movies as |m|}}
+        <div class="movies-list__card">
+          <div class="movies-list__poster">
+            <img class="movies-list__poster-image" src={{m.imageUrl}}/>
+            {{#if m.hasOscar}}
+              <div class="movies-list__badge">
+                <div class="movies-list__oscar"></div>
+              </div>
+            {{/if}}
+          </div>
+          <div class="movies-list__content">
+            <div class="movies-list__title"> {{m.name}} </div>
+            <div class="movies-list__caption">
+              {{#if m.hasLeonardoDicaprioStarredInThisMovie}}
+                Do you know why this movie is great? Because Leonardo DiCaprio is starring in it.
+                Oh boy... Why doesn't he play in every movie? The world would be a better place then.
+              {{else}}
+                Although this is a really awesome movie Leonardo DiCaprio has not appearead in any
+                scene. Seems like it is not the best choice for Leo’s fans.
+              {{/if}}
+            </div>
+            <div class="movies-list__score">
+              <div class="movies-list__label">Budget:</div>
+              $ {{m.budget}}
+            </div>
+            <div class="movies-list__score">
+              <div class="movies-list__label">Metascore:</div>
+              {{m.metascore}}
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+
+    {{!-- Filters --}}
+    <aside class="filters-block">
+      <div class="filters-block__title">Filters</div>
+      <div class="filters-block__content">
+
+        {{#each model.movieFilters as |f|}}
+          <div class="filter-item">
+            <div class="filter-item__label">{{f.label}}</div>
+            <div class="filter-item__control">
+              {{#if f.isBoolean}}
+                <label class="checkbox">
+                  <input type="checkbox" class="checkbox__input">
+                  <div class="checkbox__placeholder">
+                    <div class="checkbox__checkmark"></div>
+                  </div>
+                </label>
+              {{else if f.isNumber}}
+                <input type="text" class="text-field" placeholder="0">
+              {{/if}}
+            </div>
+          </div>
+        {{/each}}
+
+      </div>
+    </aside>
+  </div>
+</div>

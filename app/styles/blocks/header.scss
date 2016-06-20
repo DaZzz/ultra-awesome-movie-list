@@ -1,0 +1,30 @@
+@import '../colors';
+
+.header {
+
+}
+
+.header__logo {
+  width: 100px;
+  height: 100px;
+  background: url("/assets/logo.svg") no-repeat;
+  background-size: contain;
+  margin: 32px auto 8px auto;
+}
+
+.header__title {
+  padding: 0 16px;
+  margin: 0 0 8px 0;
+  font-weight: 300;
+  font-size: 64px;
+  text-align: center;
+  color: $white;
+}
+
+.header__subtitle {
+  margin-bottom: 64px;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 300;
+  color: rgba($white, 0.8);
+}

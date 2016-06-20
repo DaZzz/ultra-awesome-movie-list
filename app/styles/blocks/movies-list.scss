@@ -1,0 +1,75 @@
+@import '../colors';
+
+.movies-list {
+  flex: 1;
+  margin-right: 64px;
+}
+
+.movies-list__card {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-bottom: 48px;
+}
+
+// Poster
+.movies-list__poster {
+  position: relative;
+}
+
+.movies-list__poster-image {
+  width: 160px;
+  height: 240px;;
+  border-radius: 3px;
+  box-shadow: 0 0 1px rgba(#000, 0.08), 0 0 3px rgba(#000, 0.16);
+}
+
+.movies-list__badge {
+  width: 40px;
+  height: 40px;
+  background-color: $yellow-600;
+  border-radius: 20px;
+  box-shadow: 0 0 1px rgba(#000, 0.08), 0 1px 3px rgba(#000, 0.16);
+  top: -10px;
+  right: -10px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movies-list__oscar {
+  width: 12px;
+  height: 28px;
+  background: url('/assets/oscar.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+// Content
+.movies-list__content {
+  flex: 1;
+  margin-left: 24px;
+}
+
+.movies-list__title {
+  font-size: 32px;
+  color: $white;
+  margin-bottom: 12px;
+}
+
+.movies-list__caption {
+  font-size: 16px;
+  color: rgba($white, 0.6);
+  margin-bottom: 16px;
+}
+
+.movies-list__score {
+  margin-bottom: 8px;
+  font-size: 18px;
+  color: rgba($white, 0.6);
+}
+
+.movies-list__label {
+  display: inline-block;
+  color: $blue-500;
+}

@@ -1,0 +1,39 @@
+@import '../colors';
+
+.checkbox {
+  display: block;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  display: none;
+}
+
+.checkbox__input:checked + .checkbox__placeholder {
+  background-color: $blue-500;
+
+  > .checkbox__checkmark {
+    display: block;
+  }
+}
+
+.checkbox__placeholder {
+  width: 32px;
+  height: 32px;
+  border: 2px solid $blue-500;
+  background-color: transparent;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox__checkmark {
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-image: url('/assets/check-mark.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
