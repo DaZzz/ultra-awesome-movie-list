@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+
   movieFilters: null,
   isMovieListLoading: false,
 
@@ -8,14 +9,14 @@ export default Ember.Controller.extend({
     const filters = {};
 
     this.get('movieFilters').forEach((filter) => {
-      filters[filter.get('name')] = filter.get('value')
+      filters[filter.get('name')] = filter.get('value');
     });
 
     this.set('isMovieListLoading', true);
     this.store.query('movie', filters).then((movies) => {
       this.set('movies', movies);
       this.set('isMovieListLoading', false);
-    })
+    });
   })
 
 });

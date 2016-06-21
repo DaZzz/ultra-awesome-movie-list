@@ -8,7 +8,7 @@ export default Ember.Route.extend({
 
   beforeModel() {
     return this.store.findAll('movie-filter').then((movieFilterSchemas) => {
-      this.controllerFor('index').set('movieFilterSchemas', movieFilterSchemas)
+      this.controllerFor('index').set('movieFilterSchemas', movieFilterSchemas);
       this.controllerFor('index').set('movieFilters', movieFilterSchemas.map((schema) => {
         return Ember.Object.create({
           label: schema.get('label'),
@@ -17,10 +17,9 @@ export default Ember.Route.extend({
           value: schema.get('defaultValue'),
           isBoolean: schema.get('type') === 'boolean',
           isNumber: schema.get('type') === 'number'
-        })
-      }))
-
-    })
+        });
+      }));
+    });
   }
 
 });

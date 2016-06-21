@@ -57,7 +57,6 @@
       {{/if}}
     </div>
 
-
     {{!-- Filters --}}
     <aside class="filters-block">
       <div class="filters-block__title">Filters</div>
@@ -67,18 +66,7 @@
           <div class="filter-item">
             <div class="filter-item__label">{{f.label}}</div>
             <div class="filter-item__control">
-
-              {{#if f.isBoolean}}
-                <label class="checkbox">
-                  {{input type="checkbox" class="checkbox__input" checked=f.value }}
-                  <div class="checkbox__placeholder">
-                    <div class="checkbox__checkmark"></div>
-                  </div>
-                </label>
-              {{else if f.isNumber}}
-                {{ input class="text-field" placeholder="0" value=f.value }}
-              {{/if}}
-
+              {{component (concat 'filter-field-' f.type) value=f.value}}
             </div>
           </div>
         {{/each}}
