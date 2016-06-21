@@ -1,7 +1,20 @@
-# Ultra-awesome-movie-list
+# ULTRA AWESOME MOVIE LIST
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is Ember.js showcase app for demonstration purposes. In this app you will be able to
+filter movies with set of following filters:
+
+- `has-oscar`
+- `has-leonardo-dicaprio-starred-in-this-movie`
+- `year-from`
+- `year-to`
+- `metascore-from`
+- `metascore-to`
+
+There are two expected API endpoints:
+
+- `GET /movies?[filter_name=filter_value]` - returns list of available movies;
+- `GET /movie-filters` - returns list of available filters with default values.
+
 
 ## Prerequisites
 
