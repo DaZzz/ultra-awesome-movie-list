@@ -6,12 +6,5 @@ export default Model.extend({
   name: attr(),
   label: attr(),
   type: attr(),
-
-  isBoolean: Ember.computed('type', function () {
-    return this.get('type') === 'boolean';
-  }),
-
-  isNumber: Ember.computed('type', function () {
-    return this.get('type') === 'number';
-  })
+  defaultValue: attr()
 });

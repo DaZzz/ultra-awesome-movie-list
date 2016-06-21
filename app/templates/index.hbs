@@ -9,38 +9,52 @@
 
     {{!-- Movie List --}}
     <div class="movies-list">
-      {{#each model.movies as |m|}}
-        <div class="movies-list__card">
-          <div class="movies-list__poster">
-            <img class="movies-list__poster-image" src={{m.imageUrl}}/>
-            {{#if m.hasOscar}}
-              <div class="movies-list__badge">
-                <div class="movies-list__oscar"></div>
-              </div>
-            {{/if}}
+      {{#if isMovieListLoading}}
+        <div class="movies-list__loader-block">
+          <div class="movies-list__spinner-wrapper">
+            <div class="movies-list__spinner"></div>
           </div>
-          <div class="movies-list__content">
-            <div class="movies-list__title"> {{m.name}} </div>
-            <div class="movies-list__caption">
-              {{#if m.hasLeonardoDicaprioStarredInThisMovie}}
-                Do you know why this movie is great? Because Leonardo DiCaprio is starring in it.
-                Oh boy... Why doesn't he play in every movie? The world would be a better place then.
-              {{else}}
-                Although this is a really awesome movie Leonardo DiCaprio has not appearead in any
-                scene. Seems like it is not the best choice for Leo’s fans.
+          <div class="movies-list__spinner-text"> Loading movies... </div>
+        </div>
+      {{else}}
+        {{#each movies as |m|}}
+          <div class="movies-list__card">
+            <div class="movies-list__poster">
+              <img class="movies-list__poster-image" src={{m.imageUrl}}/>
+              {{#if m.hasOscar}}
+                <div class="movies-list__badge">
+                  <div class="movies-list__oscar"></div>
+                </div>
               {{/if}}
             </div>
-            <div class="movies-list__score">
-              <div class="movies-list__label">Budget:</div>
-              $ {{m.budget}}
-            </div>
-            <div class="movies-list__score">
-              <div class="movies-list__label">Metascore:</div>
-              {{m.metascore}}
+            <div class="movies-list__content">
+              <div class="movies-list__title"> {{m.name}} </div>
+              <div class="movies-list__caption">
+                {{#if m.hasLeonardoDicaprioStarredInThisMovie}}
+                  Do you know why this movie is great? Because Leonardo DiCaprio is starring in it.
+                  Oh boy... Why doesn't he play in every movie? The world would be a better place then.
+                {{else}}
+                  Although this is a really awesome movie Leonardo DiCaprio has not appeared in any
+                  scene. Seems like it is not the best choice for Leo’s fans.
+                {{/if}}
+              </div>
+              <div class="movies-list__score">
+                <div class="movies-list__label">Budget:</div>
+                $ {{m.budget}}
+              </div>
+              <div class="movies-list__score">
+                <div class="movies-list__label">Metascore:</div>
+                {{m.metascore}}
+              </div>
             </div>
           </div>
-        </div>
-      {{/each}}
+        {{else}}
+          <div class="movies-list__empty-state">
+            <div class="movies-list__empty-icon"></div>
+            <div class="movies-list__empty-text">Seems like no movies satisfy filter parameters</div>
+          </div>
+        {{/each}}
+      {{/if}}
     </div>
 
 
@@ -49,20 +63,22 @@
       <div class="filters-block__title">Filters</div>
       <div class="filters-block__content">
 
-        {{#each model.movieFilters as |f|}}
+        {{#each movieFilters as |f|}}
           <div class="filter-item">
             <div class="filter-item__label">{{f.label}}</div>
             <div class="filter-item__control">
+
               {{#if f.isBoolean}}
                 <label class="checkbox">
-                  <input type="checkbox" class="checkbox__input">
+                  {{input type="checkbox" class="checkbox__input" checked=f.value }}
                   <div class="checkbox__placeholder">
                     <div class="checkbox__checkmark"></div>
                   </div>
                 </label>
               {{else if f.isNumber}}
-                <input type="text" class="text-field" placeholder="0">
+                {{ input class="text-field" placeholder="0" value=f.value }}
               {{/if}}
+
             </div>
           </div>
         {{/each}}
