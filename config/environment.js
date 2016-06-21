@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'dynamic-filters',
+    modulePrefix: 'ultra-awesome-movie-list',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

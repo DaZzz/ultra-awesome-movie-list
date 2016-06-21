@@ -1,7 +1,7 @@
 {
-  "name": "dynamic-filters",
+  "name": "ultra-awesome-movie-list",
   "version": "0.0.0",
-  "description": "Small description for dynamic-filters goes here",
+  "description": "Small description for ultra-awesome-movie-list goes here",
   "private": true,
   "directories": {
     "doc": "doc",
