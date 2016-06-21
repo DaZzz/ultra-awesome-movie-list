@@ -1,3 +1,6 @@
+
+![Screen](https://github.com/DaZzz/ultra-awesome-movie-list/blob/master/public/assets/screen.png?raw=true)
+
 # ULTRA AWESOME MOVIE LIST
 
 This is Ember.js showcase app for demonstration purposes. In this app you will be able to
